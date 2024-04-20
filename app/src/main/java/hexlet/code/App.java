@@ -26,8 +26,10 @@ public class App {
                 break;
             case "5":
                 cli.runGame(new Progression());
+                break;
             case "6":
                 cli.runGame(new Prime());
+                break;
             default:
                 cli.exitProgram();
                 break;
