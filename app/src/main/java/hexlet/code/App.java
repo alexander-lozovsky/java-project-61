@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.IsEven;
 import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
 
 public class App {
     public static void main(String[] args) {
@@ -17,6 +18,10 @@ public class App {
                 break;
             case "3":
                 cli.runGame(new Calc());
+                break;
+            case "4":
+                cli.runGame(new GCD());
+                break;
             default:
                 cli.exitProgram();
                 break;
