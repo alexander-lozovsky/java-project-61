@@ -1,4 +1,5 @@
 plugins {
+    application
     id("java")
 }
 
@@ -9,6 +10,10 @@ repositories {
     mavenCentral()
 }
 
+application {
+    mainClass = "hexlet.code.App"
+}
+
 dependencies {
     testImplementation(platform("org.jun`it:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -17,3 +22,5 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+
