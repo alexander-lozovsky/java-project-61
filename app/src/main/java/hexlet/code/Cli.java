@@ -52,9 +52,10 @@ public class Cli {
 
         System.out.println(game.getRules());
 
-        var correctCount = 0;
+        var wins = 0;
+        var maxWins = 3;
 
-        while (correctCount != 3) {
+        while (wins != maxWins) {
             var generatedGame = game.generate();
             var question = generatedGame[0];
             var answer = generatedGame[1];
@@ -65,7 +66,7 @@ public class Cli {
 
             if (userAnswer.equals(answer)) {
                 System.out.println("Correct!");
-                correctCount += 1;
+                wins += 1;
             } else {
                 var endGameMessage = new StringBuilder();
                 endGameMessage.append("'" + userAnswer + "'");

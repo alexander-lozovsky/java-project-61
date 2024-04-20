@@ -3,15 +3,16 @@ package hexlet.code.games;
 import hexlet.code.Utils;
 
 public class Prime implements Game {
-    private static int minNumber = 2;
-    private static int maxNumber = 100;
+    private static final int  MIN_NUMBER = 2;
+
+    private static final int  MAX_NUMBER = 100;
 
     public String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
     public String[] generate() {
-        var question = Utils.getRandomNumber(minNumber, maxNumber);
+        var question = Utils.getRandomNumber(MIN_NUMBER, MAX_NUMBER);
         var answer = Utils.isNumberPrime(question) ? "yes" : "no";
 
         return new String[] {String.valueOf(question), answer};
