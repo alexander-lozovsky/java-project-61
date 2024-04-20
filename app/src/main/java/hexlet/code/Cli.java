@@ -30,6 +30,7 @@ public class Cli {
     }
 
     public void greet() {
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         this.askUserName();
         this.exitProgram();
@@ -45,6 +46,8 @@ public class Cli {
     }
 
     public void runGame(Game game) {
+        System.out.println();
+        System.out.println("Welcome to the Brain Games!");
         var userName = this.askUserName();
 
         System.out.println(game.getRules());
@@ -70,7 +73,7 @@ public class Cli {
                 endGameMessage.append("'" + answer + "'" + ".");
 
                 System.out.println(endGameMessage);
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
 
                 this.exitProgram();
                 return;
