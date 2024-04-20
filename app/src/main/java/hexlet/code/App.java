@@ -4,6 +4,7 @@ import hexlet.code.games.IsEven;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class App {
     public static void main(String[] args) {
@@ -25,6 +26,8 @@ public class App {
                 break;
             case "5":
                 cli.runGame(new Progression());
+            case "6":
+                cli.runGame(new Prime());
             default:
                 cli.exitProgram();
                 break;
