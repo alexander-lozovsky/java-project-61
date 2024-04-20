@@ -5,21 +5,28 @@ import hexlet.code.Utils;
 import java.util.StringJoiner;
 
 public class Progression implements Game {
-    private static int minNumber = 0;
-    private static int maxNumber = 20;
-    private static int minStep = 1;
-    private static int maxStep = 5;
-    private static int minLength = 5;
-    private static int maxLength = 10;
+    private static final int MIN_NUMBER = 0;
+    private static final int MAX_NUMBER = 20;
+    private static final int MIN_STEP = 1;
+    private static final int MAX_STEP = 5;
+    private static final int MIN_LENGTH = 5;
+    private static final int MAX_LENGTH = 10;
 
+    /**
+     * @return Rules description
+     */
     public String getRules() {
         return "What number is missing in the progression?";
     }
 
+    /**
+     * Generates game data.
+     * @return Game data
+     */
     public String[] generate() {
-        var start = Utils.getRandomNumber(minNumber, maxNumber);
-        var step = Utils.getRandomNumber(minStep, maxStep);
-        var length = Utils.getRandomNumber(minLength, maxLength);
+        var start = Utils.getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+        var step = Utils.getRandomNumber(MIN_STEP, MAX_STEP);
+        var length = Utils.getRandomNumber(MIN_LENGTH, MAX_LENGTH);
         var gap = Utils.getRandomNumber(0, length - 1);
 
         var question = new StringJoiner(" ");

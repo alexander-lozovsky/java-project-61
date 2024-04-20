@@ -4,16 +4,24 @@ import java.util.Scanner;
 import hexlet.code.games.Game;
 
 public class Cli {
+    private static final int MAX_WINS = 3;
     private final Scanner scanner;
 
     Cli() {
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Exits program.
+     */
     public void exitProgram() {
         this.scanner.close();
     }
 
+    /**
+     * Prompts menu and returns user choice.
+     * @return User choice
+     */
     public String promptMenu() {
         System.out.println("Please enter the game number and press Enter.");
 
@@ -29,6 +37,9 @@ public class Cli {
         return this.scanner.next();
     }
 
+    /**
+     * Prompts greeting.
+     */
     public void greet() {
         System.out.println();
         System.out.println("Welcome to the Brain Games!");
@@ -36,6 +47,10 @@ public class Cli {
         this.exitProgram();
     }
 
+    /**
+     * Prompts asking username and return.
+     * @return username
+     */
     public String askUserName() {
         System.out.print("May I have your name? ");
 
@@ -45,6 +60,10 @@ public class Cli {
         return userName;
     }
 
+    /**
+     * Runs a game.
+     * @param game Game object
+     */
     public void runGame(Game game) {
         System.out.println();
         System.out.println("Welcome to the Brain Games!");
@@ -53,9 +72,8 @@ public class Cli {
         System.out.println(game.getRules());
 
         var wins = 0;
-        var maxWins = 3;
 
-        while (wins != maxWins) {
+        while (wins != MAX_WINS) {
             var generatedGame = game.generate();
             var question = generatedGame[0];
             var answer = generatedGame[1];

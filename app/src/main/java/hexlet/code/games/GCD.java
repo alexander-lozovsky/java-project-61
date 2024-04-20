@@ -4,7 +4,6 @@ import hexlet.code.Utils;
 
 public class GCD implements Game {
     private static final int MIN_NUMBER = 1;
-
     private static final int MAX_NUMBER = 30;
 
     /**
